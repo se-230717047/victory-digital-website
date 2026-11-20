@@ -151,6 +151,7 @@ const en = {
     course: "Home course recording setup with microphone and notebook",
     meta: "Phone on a stand with paper arrows forming a funnel",
     ai: "Brass mail-sorting rack with cards routed by blue threads",
+    about: "Two coffees, a notebook with a three-step sketch and a bar chart on a desk",
   },
 };
 
@@ -306,6 +307,7 @@ const tr: SiteContent = {
     course: "Mikrofon ve defterle evde kurs kayıt düzeni",
     meta: "Standda telefon ve huni oluşturan kâğıt oklar",
     ai: "Mavi iplerle kartların yönlendirildiği pirinç posta rafı",
+    about: "Masada iki kahve, üç adımlı çizim olan defter ve çubuk grafik",
   },
 };
 
@@ -313,9 +315,10 @@ export const siteContent = { en, tr };
 export const CONTACT_EMAIL = "hello@victorydgtl.com";
 
 // Görseller hazır olunca public/site/ altına koyup buraya yolunu yazın (null = yer tutucu gösterilir).
-export const IMAGES: Record<"hero" | "course" | "meta" | "ai", string | null> = {
-  hero: null,
-  course: null,
-  meta: null,
-  ai: null,
+export const IMAGES: Record<"hero" | "course" | "meta" | "ai" | "about", string | null> = {
+  hero: "/site/hero.webp",
+  course: "/site/course.webp",
+  meta: "/site/meta.webp",
+  ai: "/site/ai.webp",
+  about: "/site/about.webp",
 };

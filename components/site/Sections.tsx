@@ -35,7 +35,7 @@ export function Hero() {
             </div>
           </div>
           <div className="reveal">
-            <Figure name="hero" alt={c.imageAlt.hero} label="01 · Hero" ratio="4 / 5" priority />
+            <Figure name="hero" alt={c.imageAlt.hero} label="01 · Hero" ratio="1 / 1" priority />
           </div>
         </div>
 
@@ -259,6 +259,9 @@ export function Process() {
           <div>
             <p className="eyebrow reveal">{x.eyebrow}</p>
             <h2 className="display h-sub reveal">{x.title}</h2>
+          </div>
+          <div className="reveal">
+            <Figure name="about" alt={c.imageAlt.about} label="05 · Process" />
           </div>
         </div>
         <ol className="steps reveal">
