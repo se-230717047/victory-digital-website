@@ -39,6 +39,15 @@ export function Hero() {
           </div>
         </div>
 
+        <dl className="facts reveal">
+          {h.facts.map((f) => (
+            <div key={f.k}>
+              <dt>{f.k}</dt>
+              <dd>{f.v}</dd>
+            </div>
+          ))}
+        </dl>
+        <p className="hero-note reveal">{h.note}</p>
       </div>
     </section>
   );

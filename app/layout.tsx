@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
-import { Fraunces, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Schibsted_Grotesk, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 
-const display = Fraunces({
+// Başlıklar: gazete kökenli, sade bir grotesk (eski hali Fraunces serif'ti; geri dönmek için git'te önceki commit).
+const display = Schibsted_Grotesk({
   subsets: ["latin", "latin-ext"],
   variable: "--font-display",
-  style: ["normal", "italic"],
-  axes: ["opsz", "SOFT"],
 });
 
 const sans = Hanken_Grotesk({
