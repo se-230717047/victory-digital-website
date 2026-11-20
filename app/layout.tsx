@@ -1,18 +1,38 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Fraunces, Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
-import ChatBot from "@/components/ChatBot";
 
-const inter = Inter({
-  subsets: ["latin"],
+const display = Fraunces({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-display",
+  style: ["normal", "italic"],
+  axes: ["opsz", "SOFT"],
+});
+
+const sans = Hanken_Grotesk({
+  subsets: ["latin", "latin-ext"],
   variable: "--font-sans",
 });
 
+const mono = JetBrains_Mono({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-mono",
+  weight: ["400", "500"],
+});
+
 export const metadata: Metadata = {
-  title: "Victory Digital | Yerel İşletmeler İçin Pazarlama",
+  title: "Victory Digital — Growth systems for course creators and service businesses",
   description:
-    "Local SEO, Google/Meta Ads, AI otomasyon ve sosyal medya yönetimiyle daha çok müşteri.",
+    "Meta Ads for online course creators, AI agents for small teams and Local SEO for local businesses. A small, hands-on growth studio.",
+  openGraph: {
+    title: "Victory Digital",
+    description:
+      "Meta Ads for online course creators, AI agents for small teams and Local SEO for local businesses.",
+    url: "https://www.victorydgtl.com",
+    siteName: "Victory Digital",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -21,12 +41,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr" suppressHydrationWarning>
-      <body className={inter.variable} suppressHydrationWarning>
-        <LanguageProvider>
-          {children}
-          <ChatBot />
-        </LanguageProvider>
+    <html lang="en" className={`${display.variable} ${sans.variable} ${mono.variable}`} suppressHydrationWarning>
+      <body suppressHydrationWarning>
+        <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
   );

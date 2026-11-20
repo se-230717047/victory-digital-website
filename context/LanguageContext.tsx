@@ -21,14 +21,17 @@ type LanguageContextValue = {
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 function getInitialLocale(): Locale {
-  if (typeof window === "undefined") return "tr";
-  const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored === "en" || stored === "tr") return stored;
-  return "tr";
+  if (typeof window === "undefined") return "en";
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored === "en" || stored === "tr") return stored;
+  } catch {}
+  // Ziyaretçilerin çoğu yurt dışından (cold email): tarayıcı Türkçe değilse İngilizce aç.
+  return navigator.language?.toLowerCase().startsWith("tr") ? "tr" : "en";
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>("tr");
+  const [locale, setLocaleState] = useState<Locale>("en");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -39,7 +42,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const setLocale = useCallback((next: Locale) => {
     setLocaleState(next);
     if (typeof window !== "undefined") {
-      localStorage.setItem(STORAGE_KEY, next);
+      try { localStorage.setItem(STORAGE_KEY, next); } catch {}
       document.documentElement.lang = next === "tr" ? "tr" : "en";
     }
   }, []);
