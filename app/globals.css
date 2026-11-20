@@ -1302,3 +1302,14 @@ a {
     aspect-ratio: 3 / 2 !important;
   }
 }
+
+.brand {
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo {
+  width: 30px;
+  height: 30px;
+  flex: none;
+}

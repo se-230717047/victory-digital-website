@@ -311,7 +311,7 @@ export function Footer() {
     <footer className="footer">
       <div className="wrap footer-inner">
         <a href="#top" className="brand">
-          <span className="brand-mark" aria-hidden="true" />
+          <img className="brand-logo" src="/brand/mark-dark.svg" alt="" width={30} height={30} />
           Victory Digital
         </a>
         <span>{c.footer.tagline}</span>

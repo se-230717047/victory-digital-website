@@ -19,7 +19,7 @@ export default function Nav() {
     <header className={`nav${scrolled ? " scrolled" : ""}`}>
       <div className="wrap nav-inner">
         <a href="#top" className="brand" onClick={() => setOpen(false)}>
-          <span className="brand-mark" aria-hidden="true" />
+          <img className="brand-logo" src="/brand/mark.svg" alt="" width={30} height={30} />
           Victory Digital
         </a>
 
