@@ -39,22 +39,6 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="ledger reveal">
-          <span className="ledger-label">{h.ledgerLabel}</span>
-          <div className="ledger-row">
-            {h.ledger.map((l, i) => (
-              <div className="ledger-item" key={l.label}>
-                {i > 0 && (
-                  <span className="ledger-sep" aria-hidden="true">
-                    →
-                  </span>
-                )}
-                <span className="ledger-value">{l.value}</span>
-                <span className="ledger-unit">{l.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
@@ -130,27 +114,14 @@ export function CourseCreators() {
               ))}
             </ul>
           </div>
-          <div className="case reveal">
-            <p className="list-title">{x.caseTitle}</p>
-            {x.caseRows.map((r) => (
-              <div className="case-row" key={r.label}>
-                <span>{r.label}</span>
-                <span className="v">{r.value}</span>
-              </div>
-            ))}
-            <p className="case-note">{x.caseNote}</p>
-          </div>
-        </div>
-
-        <div className="price price-wide row-gap reveal">
-          <div>
-            <p className="list-title">{x.priceTitle}</p>
-            <p className="price-figure">
-              {x.priceMain}
-              <em>{x.pricePlus}</em>
-            </p>
-          </div>
-          <div className="price-body">
+          <div className="price reveal">
+            <div>
+              <p className="list-title">{x.priceTitle}</p>
+              <p className="price-figure">
+                {x.priceMain}
+                <em>{x.pricePlus}</em>
+              </p>
+            </div>
             <p>{x.priceText}</p>
             <p className="fit">{x.fit}</p>
             <div>
